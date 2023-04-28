@@ -54,6 +54,11 @@ class ViewController: UIViewController {
         
         
     }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        todayLabel.alpha = 0
+        todayLabel.transform = CGAffineTransform(translationX: 0, y: -100)
+    }
 
 }
 
