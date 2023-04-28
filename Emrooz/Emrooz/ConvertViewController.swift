@@ -12,6 +12,8 @@ class ConvertViewController: UIViewController {
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var blurView: UIVisualEffectView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -78,10 +80,10 @@ class ConvertViewController: UIViewController {
             self.label.alpha = 1
             self.label.transform = CGAffineTransform(scaleX: 1, y: 1)
             self.blurView.effect = UIBlurEffect(style: UIBlurEffect.Style.light)
-
         }
     }
-     override func viewDidDisappear(_ animated: Bool) {
+    
+    override func viewDidDisappear(_ animated: Bool) {
         self.blurView.effect = nil
     }
     
