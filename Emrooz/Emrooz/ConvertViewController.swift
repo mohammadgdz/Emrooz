@@ -46,6 +46,7 @@ class ConvertViewController: UIViewController {
         self.datePicker.alpha = 0
         label.alpha = 0
         label.transform = CGAffineTransform(scaleX: 0.6, y: 0.6)
+        blurView.effect = nil
         
         // Do any additional setup after loading the view.
     }
@@ -76,8 +77,12 @@ class ConvertViewController: UIViewController {
             self.datePicker.alpha = 1
             self.label.alpha = 1
             self.label.transform = CGAffineTransform(scaleX: 1, y: 1)
-            
+            self.blurView.effect = UIBlurEffect(style: UIBlurEffect.Style.light)
+
         }
+    }
+     override func viewDidDisappear(_ animated: Bool) {
+        self.blurView.effect = nil
     }
     
     
